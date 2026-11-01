@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Toqa Fathey Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfolio of Toqa Fathey, social media specialist and content creator in Cairo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+/* Layout concept: one long, quiet page on a stone-grey ground. The name is the single loud element.
+   Each section pairs a short text column with one clearly labelled illustrative image; real client work
+   sits below in separate, labelled client blocks so AI visuals and authentic work never share a frame. */
+:root {
+  color-scheme: dark;
+  --bg: #0B0B0C;        /* black ground */
+  --alt: #121214;       /* alternate section band */
+  --surface: #1A1A1D;   /* cards, chips */
+  --ink: #F1EEE8;       /* warm white text */
+  --muted: #A29D94;     /* secondary text */
+  --line: #2C2B2E;      /* hairlines */
+  --accent: #D9B779;    /* champagne gold: links, focus, highlights */
+  --kind-bg: rgba(0, 0, 0, 0.72);
+  --kind-ink: #F1EEE8;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --r: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1.125rem; line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; }
+a { color: var(--accent); }
+h1, h2, h3, h4 { font-family: var(--display); margin: 0; text-wrap: balance; }
+p { margin: 0 0 1em; max-width: 64ch; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.wrap {
+  max-width: 1160px; margin-left: auto; margin-right: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+/* header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 30; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; font-family: var(--display); font-size: 0.95rem; cursor: pointer; }
+#nav { display: flex; gap: 22px; flex-wrap: wrap; font-family: var(--display); font-size: 0.95rem; }
+#nav a { color: var(--ink); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+#nav a:hover { border-bottom-color: var(--accent); }
+@media (max-width: 860px) {
+  .menu-btn { display: inline-block; }
+  #nav { display: none; width: 100%; flex-direction: column; gap: 0; padding-bottom: 12px; }
+  #nav.open { display: flex; }
+  #nav a { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+}
+section[id], article[id], h3[id], h4[id] { scroll-margin-top: 76px; }
+
+/* sections */
+.sec { padding-block: clamp(56px, 9vw, 112px); }
+.sec.alt { background: var(--alt); }
+h2 { font-weight: 800; font-size: clamp(2rem, 4.6vw, 3.3rem); letter-spacing: -0.03em; line-height: 1.02; margin-bottom: 0.5em; }
+h3.sub { font-weight: 800; font-size: 1.7rem; letter-spacing: -0.02em; margin: 72px 0 24px; }
+.lead { font-size: 1.32rem; line-height: 1.5; }
+
+/* hero */
+.hero { padding-top: clamp(32px, 6vw, 72px); padding-bottom: clamp(40px, 7vw, 88px); }
+.hero-kicker { font-family: var(--display); font-size: 1.05rem; color: var(--muted); margin-bottom: 8px; }
+h1 {
+  font-weight: 800; font-size: clamp(3.4rem, 13.2vw, 10.6rem); line-height: 0.86; letter-spacing: -0.05em;
+  font-variation-settings: "opsz" 96; margin-bottom: clamp(24px, 4vw, 48px); white-space: nowrap;
+}
+.hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; margin-bottom: clamp(28px, 5vw, 56px); }
+.hero-lede { font-size: clamp(1.2rem, 2.2vw, 1.55rem); line-height: 1.45; margin: 0; }
+.hero-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; font-size: 1rem; }
+.hero-facts li { border-top: 1px solid var(--line); padding-top: 10px; min-width: 0; }
+.hero-facts b { display: block; font-family: var(--display); font-weight: 600; }
+.hero-facts span { color: var(--muted); }
+@media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; } }
+.hero .illus img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 60%; width: 100%; }
+@media (min-width: 720px) { .hero .illus img { aspect-ratio: 21 / 9; } }
+
+/* illustrative figures */
+.illus { margin: 0; min-width: 0; }
+.illus img { width: 100%; border-radius: var(--r); background: var(--surface); }
+.illus figcaption, .proof figcaption { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; font-family: var(--display); font-size: 0.88rem; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+.tag-ai, .tag-client { display: inline-block; font-family: var(--display); font-size: 0.78rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+.tag-ai { border: 1px dashed var(--muted); color: var(--muted); background: transparent; }
+.tag-client { background: var(--accent); color: #0B0B0C; }
+
+/* split layout */
+.split { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
+.split.rev { grid-template-columns: 0.85fr 1.15fr; }
+.split.rev .illus { order: -1; }
+.split .illus img { aspect-ratio: 4 / 5; object-fit: cover; }
+.split-text { min-width: 0; }
+@media (max-width: 860px) {
+  .split, .split.rev { grid-template-columns: 1fr; }
+  .split.rev .illus { order: 0; }
+  .split .illus { max-width: 440px; }
+}
+.proof { margin: clamp(40px, 6vw, 72px) 0 0; }
+.sec .wrap + .wrap { margin-top: 0; }
+
+/* about */
+.about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 6vw, 80px); align-items: start; }
+.portrait { margin: 0; }
+.portrait img { width: 100%; border-radius: var(--r); aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
+@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } .portrait { max-width: 380px; } }
+.skills { margin: 28px 0 0; display: grid; gap: 14px; font-size: 1rem; }
+.skills div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
+.skills dt { font-family: var(--display); font-weight: 600; }
+.skills dd { margin: 0; color: var(--muted); min-width: 0; }
+@media (max-width: 520px) { .skills div { grid-template-columns: 1fr; gap: 2px; } }
+
+.timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.timeline li { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 0 0 36px 28px; position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); border: 2px solid var(--bg); }
+.timeline .when { font-family: var(--display); font-size: 0.95rem; color: var(--muted); padding-top: 3px; }
+.timeline h4 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; }
+.timeline .role { font-family: var(--display); font-size: 0.95rem; color: var(--muted); margin: 2px 0 8px; }
+.timeline p:last-child { margin-bottom: 0; font-size: 1.02rem; }
+.timeline div { min-width: 0; }
+@media (max-width: 640px) { .timeline li { grid-template-columns: 1fr; gap: 2px; } }
+.inline { font-family: var(--display); font-size: 0.92rem; white-space: nowrap; }
+
+/* projects */
+.projects { display: grid; gap: clamp(64px, 9vw, 112px); }
+.project { border-top: 2px solid var(--ink); padding-top: 28px; margin-top: clamp(48px, 7vw, 80px); min-width: 0; }
+.projects .project { margin-top: 0; }
+.chead { display: flex; gap: 20px; align-items: center; margin-bottom: 24px; flex-wrap: wrap; }
+.logo-chip { height: 88px; min-width: 88px; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid var(--line); flex: none; }
+.logo-chip img { height: 100%; width: auto; max-width: 150px; object-fit: contain; }
+.chead > div { min-width: 0; }
+h3 { font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -0.025em; line-height: 1.1; }
+.role { font-family: var(--display); font-size: 0.98rem; color: var(--muted); margin: 4px 0 10px; max-width: none; }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.chips li, .chip { font-family: var(--display); font-size: 0.82rem; padding: 3px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.pdesc { max-width: 70ch; }
+.case { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(24px, 5vw, 72px); margin-bottom: 8px; }
+.case > div { min-width: 0; }
+@media (max-width: 800px) { .case { grid-template-columns: 1fr; } }
+h4 { font-weight: 600; font-size: 1.05rem; margin: 20px 0 8px; letter-spacing: -0.005em; }
+.case h4:first-child { margin-top: 0; }
+h4.blk { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; margin: 56px 0 14px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+h4.blk small { font-family: var(--body); font-weight: 400; font-size: 0.98rem; color: var(--muted); letter-spacing: 0; }
+.plain { margin: 0 0 1em; padding-left: 1.2em; max-width: 64ch; }
+.plain li { margin-bottom: 6px; }
+.note { font-size: 0.98rem; color: var(--muted); }
+
+/* galleries */
+.grid { display: grid; gap: 12px; }
+.grid.posts { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.grid.four { grid-template-columns: repeat(4, 1fr); }
+.grid.three { grid-template-columns: repeat(3, 1fr); }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+.grid.shoot { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+@media (max-width: 760px) { .grid.four { grid-template-columns: repeat(2, 1fr); } .grid.three { grid-template-columns: repeat(2, 1fr); } .grid.posts { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 380px) { .grid.three, .grid.four, .grid.posts { grid-template-columns: 1fr 1fr; } }
+#vethome .grid.four .tile { aspect-ratio: 4 / 5; background: var(--surface); }
+#vethome .grid.four .tile img { height: 100%; object-fit: contain; }
+.tile { position: relative; display: block; padding: 0; border: 0; background: var(--surface); border-radius: var(--r); overflow: hidden; cursor: zoom-in; min-width: 0; }
+.tile img { width: 100%; height: auto; transition: transform .25s ease; }
+.tile:hover img { transform: scale(1.02); }
+@media (prefers-reduced-motion: reduce) { .tile img { transition: none; } .tile:hover img { transform: none; } }
+.tile.wide { width: 100%; }
+.kind { position: absolute; left: 8px; bottom: 8px; font-family: var(--display); font-size: 0.72rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: var(--kind-bg); color: var(--kind-ink); }
+figcaption .kind { position: static; margin-right: 8px; }
+.filters { margin-bottom: 14px; }
+.chip { cursor: pointer; color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.scrollx { overflow-x: auto; border-radius: var(--r); -webkit-overflow-scrolling: touch; }
+.tracker { min-width: 880px; cursor: zoom-in; }
+.proof .tile.wide { border: 1px solid var(--line); }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; cursor: pointer; font: inherit; }
+
+/* rails */
+.rail { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 14px; -webkit-overflow-scrolling: touch; }
+.rail > * { scroll-snap-align: start; flex: none; }
+.vcard { margin: 0; width: 210px; }
+.vcard video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #000; border-radius: var(--r); }
+.vcard.land { width: min(100%, 360px); }
+.vcard.land video { aspect-ratio: 16 / 9; }
+.vcard figcaption { font-family: var(--display); font-size: 0.85rem; color: var(--muted); margin-top: 8px; line-height: 1.35; }
+.phone { width: 190px; padding: 0; border: 0; background: none; text-align: left; cursor: zoom-in; }
+.phone img { width: 100%; border-radius: 14px; border: 1px solid var(--line); aspect-ratio: 1 / 2; object-fit: cover; object-position: top; background: var(--surface); }
+.phone-cap { display: block; font-family: var(--display); font-size: 0.82rem; color: var(--muted); margin-top: 8px; line-height: 1.3; }
+
+.najm-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(20px, 4vw, 48px); align-items: start; }
+.najm-grid > * { min-width: 0; }
+.najm-video { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); align-items: start; }
+.najm-video .vcard { width: 100%; max-width: 280px; }
+.najm-video .vcard.land { grid-column: 1 / -1; max-width: 360px; }
+@media (max-width: 800px) { .najm-grid { grid-template-columns: 1fr; } }
+
+/* workflow */
+.steps { list-style: none; counter-reset: s; margin: 24px 0 0; padding: 0; display: grid; gap: 0; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.steps li::before { content: counter(s); grid-row: span 2; font-family: var(--display); font-weight: 800; font-size: 1.6rem; line-height: 1; color: var(--muted); }
+.steps b { font-family: var(--display); font-weight: 600; font-size: 1.05rem; }
+.steps span { font-size: 1rem; color: var(--muted); }
+
+/* contact */
+.contact { max-width: 880px; margin-left: auto; margin-right: auto; }
+.contact-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 24px 0 36px; }
+.email { font-family: var(--display); font-weight: 800; font-size: clamp(1.3rem, 4vw, 2.1rem); letter-spacing: -0.02em; margin: 0 16px 0 0; overflow-wrap: anywhere; user-select: all; }
+.btn { font-family: var(--display); font-weight: 600; font-size: 0.98rem; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); cursor: pointer; text-decoration: none; display: inline-block; }
+.btn.ghost { background: transparent; color: var(--ink); }
+.fine { font-size: 0.95rem; color: var(--muted); }
+.foot { padding-block: 28px; border-top: 1px solid var(--line); font-family: var(--display); font-size: 0.9rem; color: var(--muted); }
+.foot p { margin: 0; }
+
+/* lightbox */
+.lb { position: fixed; inset: 0; z-index: 50; background: rgba(12, 10, 9, 0.93); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-rows: auto 1fr; align-items: center; gap: 8px 12px;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px)); }
+.lb figure { grid-column: 2; grid-row: 2; margin: 0; display: grid; justify-items: center; gap: 12px; min-height: 0; max-height: 100%; }
+.lb img { max-width: 100%; max-height: calc(100vh - 150px); width: auto; object-fit: contain; border-radius: 4px; }
+.lb figcaption { color: #E9E4DC; font-family: var(--display); font-size: 0.95rem; text-align: center; max-width: 60ch; }
+.lb button { background: #F1EEE8; color: #0B0B0C; border: 0; border-radius: 999px; padding: 8px 16px; font-family: var(--display); font-weight: 600; font-size: 0.92rem; cursor: pointer; }
+.lb-x { grid-column: 3; grid-row: 1; justify-self: end; }
+.lb-n.prev { grid-column: 1; grid-row: 2; }
+.lb-n.next { grid-column: 3; grid-row: 2; }
+@media (max-width: 600px) {
+  .lb { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr auto; }
+  .lb figure { grid-column: 1 / -1; grid-row: 2; }
+  .lb-x { grid-column: 2; grid-row: 1; }
+  .lb-n.prev { grid-column: 1; grid-row: 3; justify-self: start; }
+  .lb-n.next { grid-column: 2; grid-row: 3; justify-self: end; }
+  .lb img { max-height: calc(100vh - 210px); }
+}
+
+/* contact details, CV, extra buttons */
+.btn.sm { font-size: 0.88rem; padding: 6px 14px; }
+.btn:hover { border-color: var(--accent); }
+.btn:not(.ghost):hover { background: var(--accent); color: #0B0B0C; }
+.btn.ghost:hover { color: var(--accent); }
+.nav-cv { border: 1px solid var(--accent) !important; color: var(--accent) !important; border-radius: 999px; padding: 4px 16px !important; }
+.nav-cv:hover { background: var(--accent); color: #0B0B0C !important; }
+@media (max-width: 860px) { .nav-cv { border-radius: 0; border: 0 !important; border-bottom: 1px solid var(--line) !important; padding: 12px 0 !important; } }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.hero-grid > div { min-width: 0; }
+.c-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 4vw, 48px); margin: 32px 0; max-width: none; }
+.c-block { min-width: 0; }
+.c-block h3 { font-size: 1.1rem; margin-bottom: 12px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.c-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.c-list li { display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-top: 1px solid var(--line); }
+.c-val { font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: -0.01em; overflow-wrap: anywhere; user-select: all; }
+.c-act { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 860px) { .c-grid { grid-template-columns: 1fr; gap: 12px; } }
+.contact { max-width: 1160px; }
+.vet-video { margin-bottom: 8px; }
+.vet-video .vcard { width: 240px; }
+.foot p { max-width: none; overflow-wrap: anywhere; }
+
+</style>
+</head>
+<body>
+
+<header class="top" id="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Toqa Fathey</a>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Sections"><a href="#about">About</a><a href="#planning">Content planning</a><a href="#direction">Creative direction</a><a href="#management">Social media</a><a href="#workflow">Workflow</a><a href="#contact">Contact</a><a class="nav-cv" href="assets/cv/Toqa-Fathey-CV.pdf" target="_blank" rel="noopener">CV</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="hero-kicker">Social media specialist and content creator</p>
+    <h1><span>Toqa</span> <span>Fathey</span></h1>
+    <div class="hero-grid">
+      <div>
+        <p class="hero-lede">I plan, write and direct social media for brands in healthcare, hospitality, veterinary supplies and digital marketing. I take an idea from content calendar to creative brief to published post, and report back on what worked.</p>
+        <div class="hero-actions"><a class="btn" href="#contact">Contact me</a><a class="btn ghost" href="assets/cv/Toqa-Fathey-CV.pdf" target="_blank" rel="noopener">Download CV</a></div>
+      </div>
+      <ul class="hero-facts" aria-label="At a glance">
+        <li><b>Based in Cairo</b><span>Working with clients in Egypt and Saudi Arabia</span></li>
+        <li><b>Currently</b><span>Al Mohamadia Medical Complex, since Aug 2025</span></li>
+        <li><b>Also</b><span>Meta ads, SEO articles, AI-assisted video concepts</span></li>
+      </ul>
+    </div>
+    <figure class="illus"><img src="assets/illustrative/hero-desk.webp" alt="A desk with a laptop, camera, printed moodboard cards and a phone in warm daylight" width="1168" height="784"><figcaption><span class="tag-ai">Illustrative</span>AI-generated image, not client work</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <figure class="portrait"><img src="assets/about/profile.webp" alt="Portrait of Toqa Fathey in a black blazer and hijab" width="900" height="1198"></figure>
+      <div class="about-text">
+        <h2>About</h2>
+        <p class="lead">I started in customer service and sales, then moved into social media. Today I write the content: what a clinic should say about a screening, what a restaurant should post on a Tuesday, what a veterinarian needs to read before buying equipment.</p>
+        <p>My work covers healthcare, hospitality, B2B, recruitment, veterinary and retail. I write the content, brief the designers and video editors, follow the shoots, and check the numbers afterwards. I hold a Bachelor of Laws from Cairo University (2019 to 2023).</p>
+        <dl class="skills"><div><dt>Social media</dt><dd>Management, content calendars, campaigns, content and competitor research</dd></div><div><dt>Writing</dt><dd>Captions, hooks and CTAs, website copy, SEO articles, medical articles</dd></div><div><dt>Creative</dt><dd>Creative concepts and briefs, creative direction for shoots, reels, AI-assisted video</dd></div><div><dt>Paid social</dt><dd>Facebook and Instagram ads, Meta Ads Manager, performance analysis</dd></div></dl>
+      </div>
+    </div>
+    <h3 class="sub">Experience</h3>
+    <ol class="timeline"><li><span class="when">Aug 2025 to now</span><div><h4>Al Mohamadia Medical Complex</h4><p class="role">Social Media Specialist &amp; Content Creator, Saudi Arabia</p><p>Content plans and calendars, captions, hooks and CTAs, short-form video and AI-assisted video concepts, creative briefs for designers, website articles and doctor profiles, and follow-up on photography sessions. <a class="inline" href="#mohamadia">See the work</a></p></div></li><li><span class="when">Freelance</span><div><h4>Vet Home</h4><p class="role">Social Media Specialist &amp; Content Creator, veterinary equipment and supplies</p><p>Content aimed at veterinary doctors and clinic owners: product-focused posts, clinic setup and after-sales services, plus reel and AI-video concepts. <a class="inline" href="#vethome">See the work</a></p></div></li><li><span class="when">Jul 2024 to Aug 2025</span><div><h4>Najm Digital Marketing</h4><p class="role">Social Media Specialist</p><p>Content, captions and calendars for multiple client accounts, Facebook and Instagram ad campaigns, design briefs and design reviews, performance analysis, influencer activations, and about 25 SEO articles. <a class="inline" href="#najm">See the work</a></p></div></li><li><span class="when">Jul 2024 to Aug 2025</span><div><h4>Clav57</h4><p class="role">Social Media Specialist, restaurant and café</p><p>Content ideas and promotions for menu items and offers, creative direction for photography and videography, and influencer marketing support. <a class="inline" href="#clav57">See the work</a></p></div></li><li><span class="when">2022 to 2024</span><div><h4>El Joker Store</h4><p class="role">Social Media Moderator</p><p>Customer conversations and product questions about Apple products, and order follow-up on social media.</p></div></li><li><span class="when">Earlier</span><div><h4>Customer service and sales</h4><p class="role">Zack&#x27;s Restaurant and BDO (Vodafone)</p><p>Phone and delivery-app order handling, customer feedback, and telesales of mobile packages.</p></div></li></ol>
+  </div>
+</section>
+
+<section class="sec alt" id="planning">
+  <div class="wrap split">
+    <div class="split-text">
+      <h2>Content planning</h2>
+      <p class="lead">Every month starts with a calendar that balances world health days, educational posts, reels and promotions, and leaves room for days off.</p>
+      <p>I research the topics and the competition, choose the format for each day, and write the brief. The calendar below is the monthly view I built for Al Mohamadia Medical Complex. It uses three content types, world days, posts and reels, across medical tips, infographics, symptoms, treatment methods and limited-time offers.</p>
+    </div>
+    <figure class="illus"><img src="assets/illustrative/planning-desk.webp" alt="Printed moodboard sheets, an open notebook and a laptop on a pale desk" width="784" height="1168"><figcaption><span class="tag-ai">Illustrative</span>AI-generated image, not client work</figcaption></figure>
+  </div>
+  <div class="wrap">
+    <figure class="proof">
+      <button class="tile wide" type="button" data-lb="assets/al-mohamadia/content-calendar.webp" data-cap="Monthly social media content calendar, Al Mohamadia Medical Complex"><img src="assets/al-mohamadia/content-calendar.webp" alt="Monthly social media content calendar for Al Mohamadia Medical Complex with colour-coded world days, posts and reels" width="1600" height="900" loading="lazy" decoding="async"><span class="kind">Calendar</span></button>
+      <figcaption><span class="tag-client">Al Mohamadia Medical Complex</span>Monthly content calendar</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="direction">
+  <div class="wrap split rev">
+    <div class="split-text">
+      <h2>Creative direction</h2>
+      <p class="lead">A good brief makes the shoot, the design and the edit easier. I give designers, photographers and editors the concept, the message and a reference.</p>
+      <p>I follow photography sessions and give shooting references and direction, so that food, products and people look like the brand. Two examples are below, each from a single client.</p>
+    </div>
+    <figure class="illus"><img src="assets/illustrative/direction-studio.webp" alt="A camera on a tripod beside a moodboard wall and a laptop" width="784" height="1168"><figcaption><span class="tag-ai">Illustrative</span>AI-generated image, not client work</figcaption></figure>
+  </div>
+
+  <div class="wrap">
+    <article class="project">
+      <header class="chead"><div class="logo-chip"><img src="assets/clav57/logo.webp" alt="Clav57 logo" width="400" height="400"></div><div><h3 id="clav57-shoot">Clav57</h3><p class="role">Photography direction, restaurant and café</p><ul class="chips" aria-label="Areas of work"><li>Behind the scenes</li><li>Food photography</li><li>Videography</li></ul></div></header>
+      <p class="pdesc">I followed the photography sessions at Clav57 and gave creative direction for food photography and visual content. These are photos from the shoot day.</p>
+      <div class="grid shoot">
+        <button class="tile" type="button" data-lb="assets/clav57/shoot/shoot-01.webp" data-cap="Filming at the Clav57 restaurant: exterior and the monitor on set"><img src="assets/clav57/shoot/shoot-01.webp" alt="Filming at the Clav57 restaurant: exterior and the monitor on set" width="1600" height="900" loading="lazy" decoding="async"><span class="kind">Behind the scenes</span></button><button class="tile" type="button" data-lb="assets/clav57/shoot/shoot-02.webp" data-cap="Clav57 shoot: venue at night, plated dishes and a poured drink"><img src="assets/clav57/shoot/shoot-02.webp" alt="Clav57 shoot: venue at night, plated dishes and a poured drink" width="1600" height="900" loading="lazy" decoding="async"><span class="kind">Behind the scenes</span></button><button class="tile" type="button" data-lb="assets/clav57/shoot/shoot-03.webp" data-cap="Clav57 shoot: café wall, content creator and barista"><img src="assets/clav57/shoot/shoot-03.webp" alt="Clav57 shoot: café wall, content creator and barista" width="1600" height="903" loading="lazy" decoding="async"><span class="kind">Behind the scenes</span></button>
+      </div>
+    </article>
+
+    <article class="project">
+      <header class="chead"><div class="logo-chip"><img src="assets/vet-home/logo.webp" alt="Vet Home logo" width="600" height="357"></div><div><h3 id="vethome-eid">Vet Home</h3><p class="role">Campaign concept, veterinary equipment and supplies</p><ul class="chips" aria-label="Areas of work"><li>Campaign</li><li>Concept</li></ul></div></header>
+      <p class="pdesc">An Eid al-Adha campaign for veterinary clinics: one character, one clinic, and a discount message carried across four product posts.</p>
+      <div class="grid four">
+        <button class="tile" type="button" data-lb="assets/vet-home/eid-campaign/eid-01.webp" data-cap="Eid al-Adha campaign: disinfectant range"><img src="assets/vet-home/eid-campaign/eid-01.webp" alt="Eid al-Adha campaign: disinfectant range" width="1024" height="1024" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/vet-home/eid-campaign/eid-02.webp" data-cap="Eid al-Adha campaign: sheep surgeon"><img src="assets/vet-home/eid-campaign/eid-02.webp" alt="Eid al-Adha campaign: sheep surgeon" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/vet-home/eid-campaign/eid-03.webp" data-cap="Eid al-Adha campaign: surgical gloves"><img src="assets/vet-home/eid-campaign/eid-03.webp" alt="Eid al-Adha campaign: surgical gloves" width="1024" height="1024" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/vet-home/eid-campaign/eid-04.webp" data-cap="Eid al-Adha campaign: sheep with pets in a waiting room"><img src="assets/vet-home/eid-campaign/eid-04.webp" alt="Eid al-Adha campaign: sheep with pets in a waiting room" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec alt" id="management">
+  <div class="wrap split">
+    <div class="split-text">
+      <h2>Social media management</h2>
+      <p class="lead">Each brand has its own audience. The aim is the same on every page: say something useful to the people who follow it.</p>
+      <p>Below is the work from each client, kept separate. My role on every project is content, copy and creative direction. Designs and videos are produced together with designers and video editors.</p>
+    </div>
+    <figure class="illus"><img src="assets/illustrative/management-dashboard.webp" alt="A laptop showing an analytics dashboard beside a phone, a coffee and an open notebook" width="784" height="1168"><figcaption><span class="tag-ai">Illustrative</span>AI-generated image, not client work. The dashboard is not real data.</figcaption></figure>
+  </div>
+  <div class="wrap projects">
+    
+<article class="project" id="mohamadia">
+  <header class="chead"><div class="logo-chip"><img src="assets/al-mohamadia/logo.webp" alt="Al Mohamadia Medical Complex logo" width="400" height="400"></div><div><h3 id="mohamadia-h">Al Mohamadia Medical Complex</h3><p class="role">Social Media Specialist &amp; Content Creator, Saudi Arabia, Aug 2025 to now</p><ul class="chips" aria-label="Areas of work"><li>Social media</li><li>Content calendars</li><li>Reels</li><li>Website articles</li><li>Photo shoots</li></ul></div></header>
+  <div class="case">
+    <div>
+      <h4>The situation</h4>
+      <p>A medical facility in Saudi Arabia. When I started, the page lacked visual consistency, and bookings stayed low even with paid advertising.</p>
+      <h4>What I did</h4>
+      <ul class="plain"><li>Built a more organized and consistent content direction across social media.</li><li>Planned and followed up photography sessions to raise the quality of visual content.</li><li>Wrote informative content that highlights the doctors&#x27; expertise rather than relying on direct sales messages.</li><li>Adapted relevant trends to the medical field.</li><li>Wrote content for the newly launched website, including medical articles.</li><li>Helped keep one brand identity across the physical location and digital platforms.</li><li>Supported the complex&#x27;s participation in conferences and collaborations.</li></ul>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <ul class="plain"><li>More patient bookings through social media and the website.</li><li>Bookings from the new website, which carries content I created.</li><li>A more consistent brand identity across the facility and its digital platforms.</li><li>A wider brand presence through conferences and collaborations.</li><li>Search ranking improved from #14 to #3 in the tracked results.</li></ul>
+    </div>
+  </div>
+
+  <h4 class="blk">Posts <small>19 posts</small></h4>
+  <div class="chips filters" role="group" aria-label="Filter Al Mohamadia posts"><button type="button" class="chip" data-filter="all" aria-pressed="true">All</button><button type="button" class="chip" data-filter="health" aria-pressed="false">Health topics</button><button type="button" class="chip" data-filter="sickle" aria-pressed="false">Sickle cell series</button><button type="button" class="chip" data-filter="pink" aria-pressed="false">Pink October</button><button type="button" class="chip" data-filter="national" aria-pressed="false">National Day</button></div>
+  <div class="grid posts" id="mo-grid"><button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-01.webp" data-cap="Pregnancy journey post: 280 days, step by step" data-group="health"><img src="assets/al-mohamadia/posts/mo-01.webp" alt="Al Mohamadia post: Pregnancy journey post: 280 days, step by step" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-02.webp" data-cap="Back-to-school health checklist for children" data-group="health"><img src="assets/al-mohamadia/posts/mo-02.webp" alt="Al Mohamadia post: Back-to-school health checklist for children" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-03.webp" data-cap="Cosmetic dentistry post about tooth gaps" data-group="health"><img src="assets/al-mohamadia/posts/mo-03.webp" alt="Al Mohamadia post: Cosmetic dentistry post about tooth gaps" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-04.webp" data-cap="Acid reflux awareness post" data-group="health"><img src="assets/al-mohamadia/posts/mo-04.webp" alt="Al Mohamadia post: Acid reflux awareness post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-05.webp" data-cap="Fertility and motherhood post" data-group="health"><img src="assets/al-mohamadia/posts/mo-05.webp" alt="Al Mohamadia post: Fertility and motherhood post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-06.webp" data-cap="Children&#x27;s fluoride session post" data-group="health"><img src="assets/al-mohamadia/posts/mo-06.webp" alt="Al Mohamadia post: Children&#x27;s fluoride session post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-07.webp" data-cap="Ingrown toenail post" data-group="health"><img src="assets/al-mohamadia/posts/mo-07.webp" alt="Al Mohamadia post: Ingrown toenail post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-08.webp" data-cap="World Lung Cancer Day post" data-group="health"><img src="assets/al-mohamadia/posts/mo-08.webp" alt="Al Mohamadia post: World Lung Cancer Day post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-09.webp" data-cap="International Women&#x27;s Day post" data-group="health"><img src="assets/al-mohamadia/posts/mo-09.webp" alt="Al Mohamadia post: International Women&#x27;s Day post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-10.webp" data-cap="Dental health post about sweets" data-group="health"><img src="assets/al-mohamadia/posts/mo-10.webp" alt="Al Mohamadia post: Dental health post about sweets" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-11.webp" data-cap="Acid reflux treatment post" data-group="health"><img src="assets/al-mohamadia/posts/mo-11.webp" alt="Al Mohamadia post: Acid reflux treatment post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-12.webp" data-cap="Sickle cell series: symptoms" data-group="sickle"><img src="assets/al-mohamadia/posts/mo-12.webp" alt="Al Mohamadia post: Sickle cell series: symptoms" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-13.webp" data-cap="Sickle cell series: why early detection matters" data-group="sickle"><img src="assets/al-mohamadia/posts/mo-13.webp" alt="Al Mohamadia post: Sickle cell series: why early detection matters" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-14.webp" data-cap="Sickle cell series: World Sickle Cell Day" data-group="sickle"><img src="assets/al-mohamadia/posts/mo-14.webp" alt="Al Mohamadia post: Sickle cell series: World Sickle Cell Day" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-15.webp" data-cap="Sickle cell series: what is sickle cell anemia" data-group="sickle"><img src="assets/al-mohamadia/posts/mo-15.webp" alt="Al Mohamadia post: Sickle cell series: what is sickle cell anemia" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-16.webp" data-cap="Pink October awareness post" data-group="pink"><img src="assets/al-mohamadia/posts/mo-16.webp" alt="Al Mohamadia post: Pink October awareness post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-17.webp" data-cap="Pink October post: breast cancer awareness month" data-group="pink"><img src="assets/al-mohamadia/posts/mo-17.webp" alt="Al Mohamadia post: Pink October post: breast cancer awareness month" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-18.webp" data-cap="Pink October post: women&#x27;s imaging and ultrasound checks" data-group="pink"><img src="assets/al-mohamadia/posts/mo-18.webp" alt="Al Mohamadia post: Pink October post: women&#x27;s imaging and ultrasound checks" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/al-mohamadia/posts/mo-19.webp" data-cap="Saudi National Day post" data-group="national"><img src="assets/al-mohamadia/posts/mo-19.webp" alt="Al Mohamadia post: Saudi National Day post" width="1080" height="1350" loading="lazy" decoding="async"><span class="kind">Design</span></button></div>
+
+  <h4 class="blk">Reels <small>Short videos for the complex's social channels. Press play on any card.</small></h4>
+  <div class="rail" tabindex="0" aria-label="Al Mohamadia reels"><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 1"><source src="assets/al-mohamadia/reels/reel-01.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 1</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 2"><source src="assets/al-mohamadia/reels/reel-02.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 2</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 3"><source src="assets/al-mohamadia/reels/reel-03.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 3</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 4"><source src="assets/al-mohamadia/reels/reel-04.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 4</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 5"><source src="assets/al-mohamadia/reels/reel-05.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 5</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 6"><source src="assets/al-mohamadia/reels/reel-06.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 6</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 7"><source src="assets/al-mohamadia/reels/reel-07.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 7</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 8"><source src="assets/al-mohamadia/reels/reel-08.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 8</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 9"><source src="assets/al-mohamadia/reels/reel-09.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 9</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 10"><source src="assets/al-mohamadia/reels/reel-10.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 10</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 11"><source src="assets/al-mohamadia/reels/reel-11.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 11</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 12"><source src="assets/al-mohamadia/reels/reel-12.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 12</figcaption></figure><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Al Mohamadia reel 13"><source src="assets/al-mohamadia/reels/reel-13.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Reel</span>Al Mohamadia reel 13</figcaption></figure></div>
+
+  <h4 class="blk" id="mohamadia-writing">Content writing <small>Articles I wrote for the Al Mohamadia website</small></h4>
+  <p class="pdesc">I write medical articles for the complex's website, across women's health, dentistry, children's health and Pink October. These screenshots show them live on the site.</p>
+  <div class="rail phones" tabindex="0" aria-label="Al Mohamadia website articles"><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-01.webp" data-cap="Ovarian reserve and fertility tests"><img src="assets/al-mohamadia/articles/ar-01.webp" alt="Website article on the Al Mohamadia site: Ovarian reserve and fertility tests" width="800" height="1490" loading="lazy" decoding="async"><span class="phone-cap">Ovarian reserve and fertility tests</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-02.webp" data-cap="Delayed pregnancy: tests and scans"><img src="assets/al-mohamadia/articles/ar-02.webp" alt="Website article on the Al Mohamadia site: Delayed pregnancy: tests and scans" width="796" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Delayed pregnancy: tests and scans</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-04.webp" data-cap="Early detection of cervical changes"><img src="assets/al-mohamadia/articles/ar-04.webp" alt="Website article on the Al Mohamadia site: Early detection of cervical changes" width="797" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Early detection of cervical changes</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-05.webp" data-cap="Pregnancy hormone test and early ultrasound"><img src="assets/al-mohamadia/articles/ar-05.webp" alt="Website article on the Al Mohamadia site: Pregnancy hormone test and early ultrasound" width="791" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Pregnancy hormone test and early ultrasound</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-06.webp" data-cap="4D ultrasound in pregnancy"><img src="assets/al-mohamadia/articles/ar-06.webp" alt="Website article on the Al Mohamadia site: 4D ultrasound in pregnancy" width="794" height="1600" loading="lazy" decoding="async"><span class="phone-cap">4D ultrasound in pregnancy</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-07.webp" data-cap="Hormone tests"><img src="assets/al-mohamadia/articles/ar-07.webp" alt="Website article on the Al Mohamadia site: Hormone tests" width="800" height="1520" loading="lazy" decoding="async"><span class="phone-cap">Hormone tests</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-08.webp" data-cap="Ovulation tracking"><img src="assets/al-mohamadia/articles/ar-08.webp" alt="Website article on the Al Mohamadia site: Ovulation tracking" width="798" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Ovulation tracking</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-09.webp" data-cap="Roaccutane and liver health"><img src="assets/al-mohamadia/articles/ar-09.webp" alt="Website article on the Al Mohamadia site: Roaccutane and liver health" width="800" height="1594" loading="lazy" decoding="async"><span class="phone-cap">Roaccutane and liver health</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-10.webp" data-cap="Vitamin B12 and body health"><img src="assets/al-mohamadia/articles/ar-10.webp" alt="Website article on the Al Mohamadia site: Vitamin B12 and body health" width="793" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Vitamin B12 and body health</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-11.webp" data-cap="Breast health: when to get an exam"><img src="assets/al-mohamadia/articles/ar-11.webp" alt="Website article on the Al Mohamadia site: Breast health: when to get an exam" width="791" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Breast health: when to get an exam</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-12.webp" data-cap="Cosmetic dental fillings"><img src="assets/al-mohamadia/articles/ar-12.webp" alt="Website article on the Al Mohamadia site: Cosmetic dental fillings" width="795" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Cosmetic dental fillings</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-13.webp" data-cap="Regular dental checkups"><img src="assets/al-mohamadia/articles/ar-13.webp" alt="Website article on the Al Mohamadia site: Regular dental checkups" width="800" height="1497" loading="lazy" decoding="async"><span class="phone-cap">Regular dental checkups</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-14.webp" data-cap="Newborn jaundice"><img src="assets/al-mohamadia/articles/ar-14.webp" alt="Website article on the Al Mohamadia site: Newborn jaundice" width="794" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Newborn jaundice</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-15.webp" data-cap="Key checkups for a child&#x27;s health"><img src="assets/al-mohamadia/articles/ar-15.webp" alt="Website article on the Al Mohamadia site: Key checkups for a child&#x27;s health" width="800" height="1511" loading="lazy" decoding="async"><span class="phone-cap">Key checkups for a child&#x27;s health</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-16.webp" data-cap="Fluoride for children&#x27;s teeth"><img src="assets/al-mohamadia/articles/ar-16.webp" alt="Website article on the Al Mohamadia site: Fluoride for children&#x27;s teeth" width="794" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Fluoride for children&#x27;s teeth</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-17.webp" data-cap="Breast cancer and Pink October: a guide"><img src="assets/al-mohamadia/articles/ar-17.webp" alt="Website article on the Al Mohamadia site: Breast cancer and Pink October: a guide" width="795" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Breast cancer and Pink October: a guide</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-18.webp" data-cap="Pink October: why awareness matters"><img src="assets/al-mohamadia/articles/ar-18.webp" alt="Website article on the Al Mohamadia site: Pink October: why awareness matters" width="800" height="1596" loading="lazy" decoding="async"><span class="phone-cap">Pink October: why awareness matters</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-19.webp" data-cap="Why October is awareness month"><img src="assets/al-mohamadia/articles/ar-19.webp" alt="Website article on the Al Mohamadia site: Why October is awareness month" width="790" height="1599" loading="lazy" decoding="async"><span class="phone-cap">Why October is awareness month</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-20.webp" data-cap="Symptoms of breast cancer"><img src="assets/al-mohamadia/articles/ar-20.webp" alt="Website article on the Al Mohamadia site: Symptoms of breast cancer" width="797" height="1600" loading="lazy" decoding="async"><span class="phone-cap">Symptoms of breast cancer</span></button><button class="phone" type="button" data-lb="assets/al-mohamadia/articles/ar-21.webp" data-cap="What is breast cancer?"><img src="assets/al-mohamadia/articles/ar-21.webp" alt="Website article on the Al Mohamadia site: What is breast cancer?" width="795" height="1600" loading="lazy" decoding="async"><span class="phone-cap">What is breast cancer?</span></button></div>
+</article>
+    
+<article class="project" id="vethome">
+  <header class="chead"><div class="logo-chip"><img src="assets/vet-home/logo.webp" alt="Vet Home logo" width="600" height="357"></div><div><h3 id="vethome-h">Vet Home</h3><p class="role">Freelance Social Media Specialist &amp; Content Creator, veterinary equipment and supplies</p><ul class="chips" aria-label="Areas of work"><li>Social media</li><li>B2B content</li><li>Paid ads</li></ul></div></header>
+  <div class="case">
+    <div>
+      <h4>The situation</h4>
+      <p>Vet Home supplies veterinary medical equipment and clinic setup. The goal was a steady social media presence that supports sales by speaking to veterinary doctors and clinic owners instead of a general audience.</p>
+      <h4>What I did</h4>
+      <ul class="plain"><li>Refined the content direction to target veterinary doctors and clinic owners.</li><li>Developed content ideas and promotional messages for that audience.</li><li>Improved visual consistency across the page.</li><li>Created product-focused content on equipment and services.</li><li>Supported sales with organic content and paid advertising.</li></ul>
+    </div>
+    <div>
+      <h4>Results</h4>
+      <ul class="plain"><li>The page started receiving organic orders.</li><li>The page looks more consistent.</li><li>Content now speaks to a clear professional audience.</li><li>Social media advertising supported sales.</li></ul>
+      <p class="note">The Eid al-Adha campaign is shown under <a class="inline" href="#vethome-eid">Creative direction</a>.</p>
+    </div>
+  </div>
+  <h4 class="blk">Posts</h4>
+  <div class="grid four"><button class="tile" type="button" data-lb="assets/vet-home/posts/vh-01.webp" data-cap="Vet Home post: otoscope for veterinary exams"><img src="assets/vet-home/posts/vh-01.webp" alt="Vet Home post: otoscope for veterinary exams" width="1024" height="1024" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/vet-home/posts/vh-02.webp" data-cap="Vet Home post: digestive health discounts"><img src="assets/vet-home/posts/vh-02.webp" alt="Vet Home post: digestive health discounts" width="928" height="1151" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/vet-home/posts/vh-03.webp" data-cap="Vet Home post: 1980s phone concept with a cat"><img src="assets/vet-home/posts/vh-03.webp" alt="Vet Home post: 1980s phone concept with a cat" width="928" height="1152" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/vet-home/posts/vh-04.webp" data-cap="Vet Home post: laboratory centrifuge"><img src="assets/vet-home/posts/vh-04.webp" alt="Vet Home post: laboratory centrifuge" width="928" height="1152" loading="lazy" decoding="async"><span class="kind">Design</span></button></div>
+  <h4 class="blk">Video <small>A presenter talking about the veterinary field in Egypt</small></h4>
+  <div class="vet-video"><figure class="vcard"><video controls playsinline preload="metadata" aria-label="Presenter video on the veterinary field in Egypt"><source src="assets/vet-home/presenter.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Video</span>Presenter video on the veterinary field in Egypt</figcaption></figure></div>
+</article>
+    
+<article class="project" id="clav57">
+  <header class="chead"><div class="logo-chip"><img src="assets/clav57/logo.webp" alt="Clav57 logo" width="400" height="400"></div><div><h3 id="clav57-h">Clav57</h3><p class="role">Social Media Specialist, restaurant and café, Jul 2024 to Aug 2025</p><ul class="chips" aria-label="Areas of work"><li>Social media</li><li>Campaign concepts</li><li>Influencer marketing</li></ul></div></header>
+  <p class="pdesc">Content and creative marketing for a restaurant and café: campaign ideas, promotions for menu items and offers, and direction for photography. The shoot-day photos are under <a class="inline" href="#clav57-shoot">Creative direction</a>.</p>
+  <h4 class="blk">Posts</h4>
+  <div class="grid three"><button class="tile" type="button" data-lb="assets/clav57/posts/cl-01.webp" data-cap="Clav57 post: summer drink over a city skyline"><img src="assets/clav57/posts/cl-01.webp" alt="Clav57 post: summer drink over a city skyline" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/clav57/posts/cl-02.webp" data-cap="Clav57 post: drink can on the moon with an astronaut"><img src="assets/clav57/posts/cl-02.webp" alt="Clav57 post: drink can on the moon with an astronaut" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/clav57/posts/cl-03.webp" data-cap="Clav57 post: delivery app promotion"><img src="assets/clav57/posts/cl-03.webp" alt="Clav57 post: delivery app promotion" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/clav57/posts/cl-04.webp" data-cap="Clav57 post: app promotion with a man on an armchair"><img src="assets/clav57/posts/cl-04.webp" alt="Clav57 post: app promotion with a man on an armchair" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/clav57/posts/cl-05.webp" data-cap="Clav57 post: prize wheel promotion"><img src="assets/clav57/posts/cl-05.webp" alt="Clav57 post: prize wheel promotion" width="960" height="960" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/clav57/posts/cl-06.webp" data-cap="Clav57 post: blue drink floating in water"><img src="assets/clav57/posts/cl-06.webp" alt="Clav57 post: blue drink floating in water" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button></div>
+</article>
+    
+<article class="project" id="najm">
+  <header class="chead"><div class="logo-chip"><img src="assets/najm/logo.webp" alt="Najm Digital Marketing logo" width="400" height="400"></div><div><h3 id="najm-h">Najm Digital Marketing</h3><p class="role">Social Media Specialist, Jul 2024 to Aug 2025</p><ul class="chips" aria-label="Areas of work"><li>Client accounts</li><li>Meta ads</li><li>Design briefs</li><li>SEO articles</li></ul></div></header>
+  <p class="pdesc">At Najm I supported digital marketing projects through social media content, advertising and creative coordination. I prepared design briefs, reviewed designs and passed on revisions, ran Facebook and Instagram campaigns, and analysed ad performance. I also wrote about 25 SEO articles across industries.</p>
+  <h4 class="blk">Selected work</h4>
+  <div class="najm-grid">
+    <div class="grid two"><button class="tile" type="button" data-lb="assets/najm/posts/nj-01.webp" data-cap="Najm Digital Marketing post about influencer marketing for businesses"><img src="assets/najm/posts/nj-01.webp" alt="Najm Digital Marketing post about influencer marketing for businesses" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button>
+<button class="tile" type="button" data-lb="assets/najm/posts/nj-02.webp" data-cap="Najm Digital Marketing post about restaurant marketing"><img src="assets/najm/posts/nj-02.webp" alt="Najm Digital Marketing post about restaurant marketing" width="1080" height="1080" loading="lazy" decoding="async"><span class="kind">Design</span></button></div>
+    <div class="najm-video">
+      <figure class="vcard land"><video controls playsinline preload="metadata" aria-label="Najm Digital Marketing animated intro"><source src="assets/najm/intro.mp4#t=0.8" type="video/mp4"></video><figcaption><span class="kind">Video</span>Najm Digital Marketing animated intro</figcaption></figure>
+    </div>
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="sec" id="workflow">
+  <div class="wrap split rev">
+    <div class="split-text">
+      <h2>Workflow</h2>
+      <p class="lead">A fixed rhythm keeps a month of content on schedule.</p>
+      <ol class="steps"><li><b>Research</b><span>Topics, competitors and the audience&#x27;s questions.</span></li><li><b>Plan</b><span>A monthly calendar and a tracker with a post type and objective for each day.</span></li><li><b>Brief</b><span>Content, copy and visual direction for the designer or video editor.</span></li><li><b>Produce</b><span>I follow design reviews and photography sessions and pass on revisions.</span></li><li><b>Publish</b><span>Scheduling posts and uploading website content.</span></li><li><b>Measure</b><span>Ad and content performance, and what to change next.</span></li></ol>
+    </div>
+    <figure class="illus"><img src="assets/illustrative/workflow-desk.webp" alt="A camera, laptop, printed photo sheets and an open notebook on a dark wooden desk" width="784" height="1168"><figcaption><span class="tag-ai">Illustrative</span>AI-generated image, not client work</figcaption></figure>
+  </div>
+  <div class="wrap">
+    <figure class="proof">
+      <div class="scrollx"><button class="tile wide tracker" type="button" data-lb="assets/al-mohamadia/content-tracker-1.webp" data-cap="Content tracker with post type, objective, department, responsible person and status"><img src="assets/al-mohamadia/content-tracker-1.webp" alt="Content tracker spreadsheet with columns for date, post type, objective, department, caption, responsible person and status" width="2400" height="751" loading="lazy" decoding="async"><span class="kind">Tracker</span></button></div>
+      <figcaption><span class="tag-client">Al Mohamadia Medical Complex</span>Content tracker. Each row has a post type (design, reel, video), an objective (awareness, educational, engagement, behind the scenes, promotional), an owner and a status.
+      <button type="button" class="linkbtn" data-lb="assets/al-mohamadia/content-tracker-2.webp" data-cap="Content tracker, later in the month">See the rest of the month</button></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec alt" id="contact">
+  <div class="wrap contact">
+    <h2>Contact</h2>
+    <p class="lead">For a new project or a conversation about your content, call or write to me.</p>
+    <div class="c-grid">
+      <div class="c-block"><h3>Email</h3>
+        <ul class="c-list"><li><span class="c-val" id="email-text">toqafathey98@gmail.com</span><span class="c-act"><button type="button" class="btn ghost sm" data-copy="toqafathey98@gmail.com">Copy</button></span></li></ul>
+      </div>
+      <div class="c-block"><h3>Phone</h3>
+        <ul class="c-list"><li><span class="c-val">0115 171 1768</span><span class="c-act"><a class="btn ghost sm" href="tel:+201151711768">Call</a><button type="button" class="btn ghost sm" data-copy="01151711768">Copy</button></span></li><li><span class="c-val">0105 593 2350</span><span class="c-act"><a class="btn ghost sm" href="tel:+201055932350">Call</a><button type="button" class="btn ghost sm" data-copy="01055932350">Copy</button></span></li></ul>
+      </div>
+      <div class="c-block"><h3>Elsewhere</h3>
+        <ul class="c-list">
+          <li><span class="c-val">LinkedIn</span><span class="c-act"><a class="btn ghost sm" href="https://www.linkedin.com/in/toqa-fathey-b9865b238" target="_blank" rel="noopener">Open profile</a></span></li>
+          <li><span class="c-val">CV (PDF)</span><span class="c-act"><a class="btn sm" href="assets/cv/Toqa-Fathey-CV.pdf" target="_blank" rel="noopener">Download CV</a></span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Images marked <span class="tag-ai">Illustrative</span> are AI-generated and are not client work. Everything else is work for the clients named beside it.</p>
+  </div>
+</section>
+<footer class="foot"><div class="wrap"><p>Toqa Fathey. Social media specialist and content creator, Cairo. toqafathey98@gmail.com · 0115 171 1768 · 0105 593 2350</p></div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-x" type="button" id="lb-close" aria-label="Close">Close</button>
+  <button class="lb-n prev" type="button" id="lb-prev" aria-label="Previous image">Previous</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-n next" type="button" id="lb-next" aria-label="Next image">Next</button>
+</div>
+</main>
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* mobile menu */
+  var menuBtn = $('#menu-btn'), nav = $('#nav');
+  menuBtn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  $$('#nav a').forEach(function (a) {
+    a.addEventListener('click', function () { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); });
+  });
+
+  /* Al Mohamadia post filters */
+  var grid = $('#mo-grid');
+  $$('.filters .chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.getAttribute('data-filter');
+      $$('.filters .chip').forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      $$('.tile', grid).forEach(function (t) { t.hidden = !(f === 'all' || t.getAttribute('data-group') === f); });
+    });
+  });
+
+  /* only one video plays at a time */
+  var vids = $$('video');
+  vids.forEach(function (v) {
+    v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v) o.pause(); }); });
+  });
+
+  /* lightbox */
+  var lb = $('#lb'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'), list = [], idx = 0, opener = null;
+  function show(i) {
+    idx = (i + list.length) % list.length;
+    var el = list[idx];
+    lbImg.src = el.getAttribute('data-lb');
+    lbImg.alt = el.getAttribute('data-cap') || '';
+    lbCap.textContent = el.getAttribute('data-cap') || '';
+    var one = list.length < 2;
+    $('#lb-prev').hidden = one; $('#lb-next').hidden = one;
+  }
+  function open(el) {
+    var ctx = el.closest('.grid, .rail, .proof') || el.parentNode;
+    list = $$('[data-lb]', ctx).filter(function (e) { return !e.closest('[hidden]'); });
+    var i = list.indexOf(el); if (i < 0) { list = [el]; i = 0; }
+    opener = el; show(i);
+    lb.hidden = false; document.documentElement.style.overflow = 'hidden';
+    $('#lb-close').focus();
+  }
+  function close() {
+    lb.hidden = true; lbImg.removeAttribute('src'); document.documentElement.style.overflow = '';
+    if (opener && opener.focus) opener.focus();
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-lb]');
+    if (el) { e.preventDefault(); open(el); }
+  });
+  $('#lb-close').addEventListener('click', close);
+  $('#lb-prev').addEventListener('click', function () { show(idx - 1); });
+  $('#lb-next').addEventListener('click', function () { show(idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft' && list.length > 1) show(idx - 1);
+    else if (e.key === 'ArrowRight' && list.length > 1) show(idx + 1);
+  });
+
+  /* copy buttons (email and phone numbers) */
+  $$('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var txt = btn.getAttribute('data-copy');
+      function selectIt() {
+        var holder = btn.closest('li').querySelector('.c-val');
+        var r = document.createRange(); r.selectNodeContents(holder);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected';
+      }
+      try {
+        navigator.clipboard.writeText(txt).then(function () { btn.textContent = 'Copied'; }, selectIt);
+      } catch (err) { selectIt(); }
+      setTimeout(function () { btn.textContent = label; }, 2200);
+    });
+  });
+})();
+
+</script>
+</body>
+</html>
